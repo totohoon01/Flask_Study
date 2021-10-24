@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <!-- jinja 템플릿 -->
+  {% if title %}
+  <title>{{ title }}</title>
+  {% else %}
+  <title>Not a page</title>
+  {% endif%}
+</head>
+<body>
+  <button id="getName">이름 가져오기!</button>
+  <p>Hello, <span class="name" id="name"></span></p>
+  <script src="../static/js/index.js"></script>
+</body>
+</html>
