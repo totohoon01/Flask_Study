@@ -1,5 +1,7 @@
+import re
 from flask import Blueprint, render_template
 from models import Question
+from forms import QuestionForm
 
 bp = Blueprint("question", __name__, url_prefix="/question")
 
@@ -15,3 +17,9 @@ def detail(question_id):
     # question = Question.query.get(question_id)
     question = Question.query.get_or_404(question_id)
     return render_template("question/question_detail.html", question=question)
+
+
+@bp.route("/create")
+def create():
+    form = QuestionForm()
+    return render_template("question/question_form.html", form=form)
